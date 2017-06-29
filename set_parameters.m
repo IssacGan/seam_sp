@@ -1,8 +1,14 @@
 
 %%
-function params = set_params(video_name)
+function params = set_parameters(datasetPath, video_name)
 %set params of image segmentation
+    params.dataset_path = datasetPath;
     params.video_name =  video_name;
+    params.cut_height_bord = 0;
+    params.cut_width_bord = 0;
+    params.maxThreArea = 200; % controls the maximum labeling area of forgroud model
+    params.minThreArea = 50; % controls the minimum labeling area of forgroud model
+    params.maxSigma = 10;
 %default parameters
     params.sp_num = 250;
     params.maxSigma = 10;
